@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: house-hystrix-dashboard
+server:
+  port: 8762
