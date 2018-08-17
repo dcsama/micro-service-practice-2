@@ -7,3 +7,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://dc:19851218@localhost:8761/eureka/
+logging:
+  level:
+    com:
+      house:
+        consumer:
+          remote:
+            IHouseRemote: DEBUG

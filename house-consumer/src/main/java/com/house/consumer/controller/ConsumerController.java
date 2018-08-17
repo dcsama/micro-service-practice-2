@@ -1,5 +1,6 @@
 package com.house.consumer.controller;
 
+import com.house.consumer.remote.IHouseRemote;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +12,11 @@ import javax.annotation.Resource;
 @RequestMapping("/consumer")
 public class ConsumerController {
 
-    @Resource(name = "restTemplate")
-    private RestTemplate restTemplate;
+    @Resource(name = "houseRemote")
+    private IHouseRemote houseRemote;
 
     @GetMapping("/hello")
     public String hello(){
-        return this.restTemplate.getForObject("http://localhost:8081/house/hello", String.class);
+        return this.houseRemote.hello();
     }
 }
