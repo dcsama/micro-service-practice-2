@@ -1,2 +1,11 @@
 server:
-  port: 8080
+  port: 8081
+spring:
+  application:
+    name: house-hello
+eureka:
+  client:
+    service-url:
+      defaultZone: http://dc:19851218@localhost:8761/eureka/
+    heartbeat-executor-exponential-back-off-bound: 1000
+    heartbeat-executor-thread-pool-size: 2

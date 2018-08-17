@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: house-eureka
+  security:
+    user:
+      name: dc
+      password: 19851218
+      roles: ADMIN
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance-id}:${server.port}
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+  server:
+    enable-self-preservation: false
