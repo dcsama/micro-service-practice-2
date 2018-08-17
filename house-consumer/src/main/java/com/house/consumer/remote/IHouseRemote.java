@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
         url = "http://localhost:8081",
         path = "/house",
         qualifier = "houseRemote",
-        configuration = FeignConfiguration.class)
+        configuration = FeignConfiguration.class,
+        fallback = HouseRemoteFallback.class)
 public interface IHouseRemote {
 
     @GetMapping("/hello")
